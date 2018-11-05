@@ -1,0 +1,19 @@
+body.ad_remove {
+  background-color: #ffffff;
+  background-size: cover;
+  border: none;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 0.75em;
+  margin: 0;
+  padding: 1.2em;
+  text-align: center;
+}
+
+body.ad_remove .card-img-top {
+  max-width: 12em;
+}
+
+.card-body {
+  padding-bottom: 0;
+}
