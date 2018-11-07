@@ -16,11 +16,8 @@ const buttonB = document.createElement('button')
 const togglePipButton = document.querySelector('.yt-float-button')
 const styleFloatButton = document.createElement('style')
   styleFloatButton.innerText = `
-  #container.style-scope.ytd-player:hover .yt-float-button {
-    display: block;
-  }
   .yt-float-button {
-    display: none;
+    display: block;
     position: absolute;
     left: 50%;
     top: 10px;
