@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "YouTube Picture in Picture",
   "description": "Float videos from YouTube with native picture-in-picture",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "icons": {
     "16": "picture-in-picture.png",
     "48": "picture-in-picture.png",
