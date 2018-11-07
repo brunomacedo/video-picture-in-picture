@@ -6,7 +6,7 @@
  * Repo: https://github.com/brunomacedo/video-picture-in-picture
  */
 const video = document.querySelector('.video-stream.html5-main-video')
-const container = document.querySelector('#container.style-scope.ytd-player')
+const container = video.parentNode.parentNode
 
 const buttonB = document.createElement('button')
   buttonB.className = 'yt-float-button'
