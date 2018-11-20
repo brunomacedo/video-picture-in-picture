@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "YouTube Picture in Picture",
   "description": "Float videos from YouTube with native picture-in-picture",
-  "version": "1.0.6",
+  "version": "1.0.26",
   "icons": {
     "16": "picture-in-picture.png",
     "48": "picture-in-picture.png",
@@ -13,7 +13,9 @@
   ],
   "content_scripts": [{
     "js": [ "picture-in-picture.js" ],
-    "matches": [ "*://*.youtube.com/*" ]
+    "matches": [
+      "*://*.youtube.com/*"
+    ]
   }],
   "browser_action": {
     "default_title": "YouTube Picture in Picture",
