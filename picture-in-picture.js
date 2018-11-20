@@ -5,7 +5,7 @@
  * @param pictureInPictureEnabled
  * Repo: https://github.com/brunomacedo/video-picture-in-picture
  */
-const video = document.querySelector('.video-stream.html5-main-video')
+const video = document.querySelector('video')
 const container = video.parentNode.parentNode
 
 const buttonB = document.createElement('button')
