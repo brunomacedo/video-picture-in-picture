@@ -5,7 +5,7 @@ Float videos from YouTube with native picture-in-picture.
 [View](https://github.com/brunomacedo/video-picture-in-picture)
 
 <p>
-  <img width="420" src="screenshot/extension-able.png" alt="Extension is abled">
+  <img width="420" src="screenshot/able2.png" alt="Extension is abled">
 </p>
 
 <p>
