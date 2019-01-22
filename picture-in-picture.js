@@ -6,7 +6,12 @@
  * Repo: https://github.com/brunomacedo/video-picture-in-picture
  */
 
-window.onload = main
+(function(){
+  setTimeout(function() {
+    main()
+  }, 1000);
+}())
+
 function main(){
   const video = document.querySelector('video')
   const container = video.parentNode.parentNode
