@@ -1,24 +1,39 @@
 {
   "manifest_version": 2,
   "name": "YouTube Picture in Picture",
+  "short_name": "Float Video",
   "description": "Float videos from YouTube with native picture-in-picture",
-  "version": "1.0.29",
+  "author": "Bruno Macedo",
+  "version": "1.1.0",
   "icons": {
-    "16": "picture-in-picture.png",
-    "48": "picture-in-picture.png",
-    "128": "picture-in-picture.png"
+    "16": "16.png",
+    "48": "48.png",
+    "64": "64.png",
+    "128": "128.png"
   },
   "permissions": [
     "activeTab"
   ],
-  "content_scripts": [{
-    "js": [ "picture-in-picture.js" ],
-    "matches": [
-      "*://*.youtube.com/*"
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "picture-in-picture.js"
     ]
-  }],
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "picture-in-picture.js"
+      ],
+      "matches": [
+        "*://*.youtube.com/*",
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
   "browser_action": {
-    "default_title": "YouTube Picture in Picture",
+    "default_title": "Float Video",
     "default_popup": "picture-in-picture.html"
   }
 }

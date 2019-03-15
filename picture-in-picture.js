@@ -6,55 +6,72 @@
  * Repo: https://github.com/brunomacedo/video-picture-in-picture
  */
 
-(function(){
-  setTimeout(function() {
+(() => {
+  try {
     main()
-  }, 1000);
-}())
+  } catch (e) { }
+})()
 
-function main(){
-  const video = document.querySelector('video')
-  const container = video.parentNode.parentNode
+function getVideoElement() {
+  let videos
+  while (document.body.contains(document.querySelector("video"))) {
+    return document.querySelector("video")
+  }
+
+  return false
+}
+
+function main() {
+  const video = getVideoElement()
+  const container = video.parentNode
+
+  /* GET VIDEO WIDTH */
+  // video.getBoundingClientRect()
 
   const buttonB = document.createElement('button')
-    buttonB.className = 'yt-float-button'
-    buttonB.innerText = 'Float'
-    container.append(buttonB)
+
+  buttonB.className = 'yt-float-button'
+  buttonB.innerText = 'Float'
+
+  container.insertBefore(buttonB, video)
 
   const togglePipButton = document.querySelector('.yt-float-button')
   const styleFloatButton = document.createElement('style')
-    styleFloatButton.innerText = `
+
+  styleFloatButton.innerText = `
     .yt-float-button {
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 10px;
-      z-index: 99999;
-      transform: translateX(-50%);
-      text-indent: -9999px;
-      font-size: 0;
-      white-space: nowrap;
-      overflow: visible;
-      width: 40px;
-      height: 40px;
-      border: 0;
-      background-color: transparent;
-      background-image: url(https://i.imgur.com/3KUHz3g.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      display: block !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 10px !important;
+      z-index: 99999 !important;
+      transform: translateX(-50%) !important;
+      text-indent: -9999px !important;
+      font-size: 0 !important;
+      white-space: nowrap !important;
+      overflow: visible !important;
+      width: 40px !important;
+      height: 40px !important;
+      border: 0 !important;
+      background-color: transparent !important;
+      background-image: url(https://i.imgur.com/3KUHz3g.png) !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: contain !important;
     }`
 
   typeof container !== 'undefined' ? container.append(styleFloatButton) : console.log('null')
 
   togglePipButton.hidden = !document.pictureInPictureEnabled || video.disablePictureInPicture
-  togglePipButton.addEventListener('click', function() {
+  togglePipButton.addEventListener('click', function (e) {
+    e.preventDefault()
+
     if (!document.pictureInPictureElement) {
       video.requestPictureInPicture()
-      .catch(error => console.error(error))
+        .catch(error => console.error(error))
     } else {
       document.exitPictureInPicture()
-      .catch(error => console.error(error))
+        .catch(error => console.error(error))
     }
   })
 }
