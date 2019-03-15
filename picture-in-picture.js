@@ -63,8 +63,8 @@ function main() {
   typeof container !== 'undefined' ? container.append(styleFloatButton) : console.log('null')
 
   togglePipButton.hidden = !document.pictureInPictureEnabled || video.disablePictureInPicture
-  togglePipButton.addEventListener('click', function (e) {
-    e.preventDefault()
+  togglePipButton.addEventListener('click', function (event) {
+    if(event.stopPropagation) event.stopPropagation()
 
     if (!document.pictureInPictureElement) {
       video.requestPictureInPicture()
